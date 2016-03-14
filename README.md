@@ -21,4 +21,18 @@ docker run --name runscope-agent \
 mmcc/runscope-agent"
 ```
 
+There are also the optional environment variables TIMEOUT, DISCONNECT_TIMEOUT, and THREADS to let you customize the agent to your server specs. Using those would look like this:
+
+```shell
+docker run --name runscope-agent \
+-e NAME=runscope-agent-test \
+-e TOKEN=runscope-token \
+-e AGENT_ID=agent-id \
+-e TEAM_ID=team-id \
+-e TIMEOUT=20 \
+-e DISCONNECT_TIMEOUT=10 \
+-e THREADS=32 \
+mmcc/runscope-agent"
+```
+
 I took quite a few cues from the [Docker DataDog agent](https://github.com/DataDog/docker-dd-agent) when building this, so big thanks to [DataDog](http://datadog.com).
